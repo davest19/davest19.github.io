@@ -1,0 +1,78 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html ng-app="mainApp">
+
+<head>
+    <!-- CDN for bootstrap -- source from bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CDN for jQuery -- source from google -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- CDN for bootstrap -- source from bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- CDN for AngularJS -- source from google -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+
+    <!-- Project CSS, HTML and JS links -- this will be sourced from CSS, JS and WebPges subfolders -->
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body ng-controller="mainController">
+    <div id="header">
+        <h2> UBS AG Logo -- Risk Analytics Group </h2>
+        <p> infroamtion related to Risk Analytics/backtesting team </p>
+    </div>
+
+    <!-- This Sections defines the Navigation bar for the given webpage, should be visible everywhere -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Risk Analytics Reports</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#home">Home</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Credit Exposure Backtesting <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#ETDpositions">ETD Positions - Simulated </a></li>
+                        <li><a href="#collateralizedOTC">Collateralized OTC - UBS Group</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Market Risk Extended Backtesting <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#P&LRave">P&L Similarity RAVE </a></li>
+                        <li><a href="#P&LHierarchy">P&L Similarity Hierarchy</a></li>
+                        <li><a href="#VARInvestmentBank">VAR Investment Bank</a></li>
+                        <li><a href="#">VAR Summary</a></li>
+                    </ul>
+                </li>
+            </ul>
+             <ul class="nav navbar-nav navbar-right">
+                <!--  Generalized helpe such as FAQ and any other resource links, this page should be with statics contenet for most of the time. -->
+                <li><a href="#helpme"><span class="glyphicon glyphicon-question-sign"></span> Help Me</a></li>
+
+                <!-- General Logout button, this might redirect page with re-load -->
+                <li><a href="#logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT AND INJECTED VIEWS -->
+    <div id="main">
+
+        <!-- angular templating -->
+        <!-- this is where content will be injected -->
+        <div ng-view></div>
+
+    </div>
+
+    <div id="footer">
+        <h4> UBS AG Risk Analytics Group</h4>
+        <p>  Ususally Legal infromation related to data security and sharing on website </p>
+        <p>  Ususally Legal infromation related to copyright and/or contact related infromation </p>
+    </div>
+</body>
+</html>
