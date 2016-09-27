@@ -4,6 +4,37 @@ google.charts.setOnLoadCallback(drawTable);
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
+google.charts.load("current", {packages:["corechart"]});
+     google.charts.setOnLoadCallback(drawChart1);
+
+     function drawChart1() {
+       var data = google.visualization.arrayToDataTable([
+         ['Horizon', 'pLevel'],
+         [ 2,      0.2],
+         [ 6,      0.8],
+         [ 21,     0.7],
+         [ 29,      0.5],
+         [ 30,      0.5],
+         [ 7,    0.7]
+       ]);
+
+       var options = {
+         title: 'Horizon vs. pLevel comparison',
+         legend: 'none',
+         crosshair: { trigger: 'both', orientation: 'both' },
+         trendlines: {
+           0: {
+             type: 'polynomial',
+             degree: 3,
+             visibleInLegend: true,
+           }
+         }
+       };
+
+       var chart = new google.visualization.ScatterChart(document.getElementById('polynomial2_div'));
+       chart.draw(data, options);
+     }
+
 function drawTable() {
   var data = new google.visualization.DataTable();
   data.addColumn('number', 'Hotizon');

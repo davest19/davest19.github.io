@@ -22,31 +22,26 @@
 </head>
 
 <body ng-controller="mainController">
-    <div id="header">
-        <h2> UBS AG Logo -- Risk Analytics Group </h2>
-        <p> infroamtion related to Risk Analytics/backtesting team </p>
-    </div>
-
     <!-- This Sections defines the Navigation bar for the given webpage, should be visible everywhere -->
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">Risk Analytics Reports</a>
+                <a class="navbar-brand" href="#">Risk Analytics Reports</a>
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#home">Home</a></li>
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Credit Exposure Backtesting <span class="caret"></span></a>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#CREExposure">Credit Exposure Backtesting <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#ETDpositions">ETD Positions - Simulated </a></li>
                         <li><a href="#collateralizedOTC">Collateralized OTC - UBS Group</a></li>
                     </ul>
                 </li>
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Market Risk Extended Backtesting <span class="caret"></span></a>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#MREExposure">Market Risk Extended Backtesting <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#P&LRave">P&L Similarity RAVE </a></li>
                         <li><a href="#P&LHierarchy">P&L Similarity Hierarchy</a></li>
                         <li><a href="#VARInvestmentBank">VAR Investment Bank</a></li>
-                        <li><a href="#">VAR Summary</a></li>
+                        <li><a href="#VARSummary">VAR Summary</a></li>
                     </ul>
                 </li>
             </ul>
@@ -69,10 +64,5 @@
 
     </div>
 
-    <div id="footer">
-        <h4> UBS AG Risk Analytics Group</h4>
-        <p>  Ususally Legal infromation related to data security and sharing on website </p>
-        <p>  Ususally Legal infromation related to copyright and/or contact related infromation </p>
-    </div>
 </body>
 </html>

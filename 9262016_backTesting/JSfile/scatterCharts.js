@@ -1,8 +1,39 @@
 google.charts.load('current', { 'packages': ['table'] });
 google.charts.setOnLoadCallback(drawTable);
 
-google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
+google.charts.load('current', {'packages':['corechart', 'line']});
+google.charts.setOnLoadCallback(drawBackgroundColor);
+
+google.charts.load("current", {packages:["corechart"]});
+     google.charts.setOnLoadCallback(drawChart1);
+
+     function drawChart1() {
+       var data = google.visualization.arrayToDataTable([
+         ['Horizon', 'pLevel'],
+         [ 2,      0.2],
+         [ 6,      0.8],
+         [ 21,     0.7],
+         [ 29,      0.5],
+         [ 30,      0.5],
+         [ 7,    0.7]
+       ]);
+
+       var options = {
+         title: 'Horizon vs. pLevel comparison',
+         legend: 'none',
+         crosshair: { trigger: 'both', orientation: 'both' },
+         trendlines: {
+           0: {
+             type: 'polynomial',
+             degree: 3,
+             visibleInLegend: true,
+           }
+         }
+       };
+
+       var chart = new google.visualization.ScatterChart(document.getElementById('polynomial2_div'));
+       chart.draw(data, options);
+     }
 
 function drawTable() {
   var data = new google.visualization.DataTable();
@@ -37,9 +68,11 @@ function drawTable() {
   table.draw(data, { showRowNumber: true, width: '100%', height: '100%' });
 }
 
-function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Horizon', 'pLevel'],
+function drawBackgroundColor() {
+        var data = new google.visualization.DataTable()
+        data.addColumn('number','Horizon');
+        data.addColumn('number','plevel');
+        data.addRows([
           [ 5,      0.9],
           [ 11,      0.1],
           [ 12,      0.8],
