@@ -33,6 +33,8 @@ function XHRhandler() {
 		Display(obj);
 		xhr = null;
 	
+	
+	return obj;
 	}
 
 }
@@ -82,6 +84,9 @@ function Display(data) {
           ['Alice', {v: 12500, f: '$12,500'}, true],
           ['Bob',   {v: 7000,  f: '$7,000'},  true]
         ]);
+
+		var jsonData = XHRhandler() ;
+		var data = new google.visualization.DataTable(jsonData);
 
         var table = new google.visualization.Table(document.getElementById('table_div'));
 
