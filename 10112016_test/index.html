@@ -32,6 +32,9 @@ function XHRhandler() {
 		var obj = XML2jsobj(xhr.responseXML.documentElement);
 		
 		drawTable(obj);
+		str = JSON.stringify(obj);
+		str = JSON.stringify(obj, null, 4); // (Optional) beautiful indented output.
+		alert(str); // Displays output using window.alert()
 		xhr = null;
 	}
 
@@ -39,8 +42,8 @@ function XHRhandler() {
 
 function drawTable(data) {
 
-		var data = new google.visualization.DataTable(data);
-		/*var data = new google.visualization.DataTable(
+		//var data = new google.visualization.DataTable(data);
+		/var data = new google.visualization.DataTable(
 			{
 				cols: [{id: 'task', label: 'Employee Name', type: 'string'},
 						{id: 'startDate', label: 'Start Date', type: 'date'}],
@@ -52,7 +55,7 @@ function drawTable(data) {
 						{c:[{v: 'Fritz'}, {v: new Date(2011, 6, 1)}]}
 					]
 			}
-			)*/
+			);
 
         var table = new google.visualization.Table(document.getElementById('table_div'));
 
